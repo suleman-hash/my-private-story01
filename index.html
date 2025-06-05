@@ -151,18 +151,111 @@
 
   <script>
     function checkPassword() {
-      const password = document.getElementById("password").value;
-      if (password === "SULEMAN@SARAH") {
-        document.getElementById("content").style.display = "block";
-        document.querySelector("input").style.display = "none";
-        document.querySelector("button").style.display = "none";
-        document.querySelector("h2").textContent = "🔓 Welcome to My Life";
-      } else {
-        alert("Wrong password!");
-      }
-    }
-  </script>
+     if (password === "SULEMAN'S LOVE SARAH") {
+  document.getElementById("login").style.display = "none";
+  document.getElementById("content").style.display = "block";
+  document.querySelector(".overlay").style.display = "none";
+  document.getElementById("bg-video").style.display = "none";
+  document.body.style.overflow = "auto";
 
+  // 🎉 Show welcome popup
+  const welcome = document.createElement("div");
+  welcome.innerHTML = `
+    <div style="
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: white;
+      color: #e74c3c;
+      font-size: 24px;
+      padding: 30px;
+      border-radius: 20px;
+      box-shadow: 0 0 30px rgba(0,0,0,0.2);
+      z-index: 9999;
+      text-align: center;
+      max-width: 90%;
+    ">
+      🎉 Welcome to Suleman's Heart, <b>Sarah</b> 💖<br>
+      <small>This is your secret place of memories...</small>
+    </div>
+  `;
+  document.body.appendChild(welcome);
+
+  // Auto hide after 4 seconds
+  setTimeout(() => {
+    welcome.remove();
+  }, 4000);
+}
+  </script>
+  
+  <script>
+function checkPassword() {
+  const password = document.getElementById("password").value;
+  if (password === "SULEMAN'S LOVE SARAH") {
+    document.getElementById("login").style.display = "none";
+    document.getElementById("content").style.display = "block";
+    document.querySelector(".overlay").style.display = "none";
+    document.getElementById("bg-video").style.display = "none";
+    document.body.style.overflow = "auto";
+
+    // 🎉 Welcome Message
+    const welcome = document.createElement("div");
+    welcome.innerHTML = `
+      <div style="
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: white;
+        color: #e74c3c;
+        font-size: 24px;
+        padding: 30px;
+        border-radius: 20px;
+        box-shadow: 0 0 30px rgba(0,0,0,0.2);
+        z-index: 9999;
+        text-align: center;
+        max-width: 90%;
+      ">
+        🎉 Welcome to Suleman's Heart, <b>Sarah</b> 💖<br>
+        <small>This is your secret place of memories...</small>
+      </div>
+    `;
+    document.body.appendChild(welcome);
+
+    setTimeout(() => {
+      welcome.remove();
+    }, 4000);
+
+    // 🟢 Show the second code input after login
+    document.getElementById("secret-section").style.display = "block";
+  } else {
+    alert("Incorrect password!");
+  }
+}
+
+// 👇 This function checks the second secret code
+function unlockSecret() {
+  const code = document.getElementById("secret-code").value;
+  if (code === "foreverlove") {
+    document.getElementById("secret-message").style.display = "block";
+  } else {
+    alert("Oops! Secret code is wrong.");
+  }
+}
+</script>
+  
+<!-- Secret Code Unlock Box -->
+<div id="secret-section" style="display:none; text-align:center; margin-top: 30px;">
+  <input id="secret-code" type="text" placeholder="Enter the Secret Code..." style="padding: 10px; font-size: 16px; border-radius: 8px;"/>
+  <button onclick="unlockSecret()" style="padding: 10px 20px; font-size: 16px; border-radius: 8px; background: #e67e22; color: white;">Unlock 💌</button>
+
+  <div id="secret-message" style="display:none; margin-top: 20px; padding: 20px; background: #fff4f4; border-radius: 12px; color: #e74c3c; font-size: 18px;">
+    💌 <strong>My Deepest Secret</strong><br>
+    Sarah, I knew I loved you from the first moment I saw your smile. This heart was always yours... forever. 💖
+  </div>
+</div>
+  
 </body>
 </html>
 
