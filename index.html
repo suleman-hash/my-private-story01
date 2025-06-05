@@ -5,12 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Welcome to My Private World</title>
   <style>
-    body, html {
+    html, body {
       margin: 0;
       padding: 0;
       height: 100%;
-      overflow: hidden;
       font-family: 'Segoe UI', sans-serif;
+      overflow: hidden;
     }
 
     video#bg-video {
@@ -19,60 +19,54 @@
       left: 0;
       min-width: 100%;
       min-height: 100%;
-      z-index: -1;
       object-fit: cover;
+      z-index: -2;
     }
 
     .overlay {
-      background-color: rgba(0, 0, 0, 0.6);
+      background: rgba(0, 0, 0, 0.6);
       position: fixed;
       top: 0; left: 0;
       width: 100%;
       height: 100%;
+      z-index: -1;
     }
 
-    .container {
-      position: relative;
-      z-index: 1;
-      text-align: center;
-      color: white;
+    #login {
+      position: absolute;
       top: 50%;
-      transform: translateY(-50%);
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: white;
+      text-align: center;
     }
 
     input, button {
       padding: 12px;
-      font-size: 16px;
       margin: 10px;
+      font-size: 16px;
       border: none;
       border-radius: 8px;
     }
 
-    input {
-      width: 200px;
-    }
-
     button {
-      background-color: #e74c3c;
+      background: #e74c3c;
       color: white;
       cursor: pointer;
-      transition: 0.3s ease;
-    }
-
-    button:hover {
-      background-color: #c0392b;
     }
 
     #content {
       display: none;
-      padding: 20px;
+      padding: 30px;
+      overflow-y: scroll;
+      height: 100vh;
       background: white;
       color: black;
     }
 
     section {
       max-width: 700px;
-      margin: 20px auto;
+      margin: 30px auto;
       background: #fefefe;
       border-radius: 12px;
       padding: 20px;
@@ -92,17 +86,15 @@
     Your browser does not support HTML5 video.
   </video>
 
-  <!-- Overlay -->
   <div class="overlay"></div>
 
-  <!-- Password Prompt -->
-  <div class="container" id="login">
+  <!-- Login Section -->
+  <div id="login">
     <h1>🔒 Enter the Secret</h1>
     <input type="password" id="password" placeholder="Enter Password" />
     <br />
     <button onclick="checkPassword()">Unlock</button>
   </div>
-  
   <div id="content">
     <section>
       <h2>👶 My Birth Story</h2>
