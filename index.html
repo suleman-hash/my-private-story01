@@ -158,47 +158,7 @@ body.logged-in {
   </div>
 
   <script>
-    function checkPassword() {
-     if (password === "SULEMAN'S LOVE SARAH") {
-  document.getElementById("login").style.display = "none";
-  document.getElementById("content").style.display = "block";
-  document.querySelector(".overlay").style.display = "none";
-  document.getElementById("bg-video").style.display = "none";
-  document.body.style.overflow = "auto";
-
-  // 🎉 Show welcome popup
-  const welcome = document.createElement("div");
-  welcome.innerHTML = `
-    <div style="
-      position: fixed;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      background: white;
-      color: #e74c3c;
-      font-size: 24px;
-      padding: 30px;
-      border-radius: 20px;
-      box-shadow: 0 0 30px rgba(0,0,0,0.2);
-      z-index: 9999;
-      text-align: center;
-      max-width: 90%;
-    ">
-      🎉 Welcome to Suleman's Heart, <b>Sarah</b> 💖<br>
-      <small>This is your secret place of memories...</small>
-    </div>
-  `;
-  document.body.appendChild(welcome);
-
-  // Auto hide after 4 seconds
-  setTimeout(() => {
-    welcome.remove();
-  }, 4000);
-}
-  </script>
-  
-  <script>
-if (password === "SULEMAN'S") {
+if (password === "SULEMAN'S LOVE SARAH") {
   document.getElementById("login").style.display = "none";
   document.getElementById("content").style.display = "block";
   document.querySelector(".overlay").style.display = "none";
