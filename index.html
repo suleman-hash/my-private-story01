@@ -77,6 +77,14 @@
       color: #e74c3c;
     }
   </style>
+  
+  <style>
+body.logged-in {
+  background: url('https://i.imgur.com/UyXPjKZ.jpg') no-repeat center center fixed;
+  background-size: cover;
+  transition: background 1s ease-in-out;
+}
+</style>
 </head>
 <body>
 
@@ -190,48 +198,22 @@
   </script>
   
   <script>
-function checkPassword() {
-  const password = document.getElementById("password").value;
-  if (password === "SULEMAN'S LOVE SARAH") {
-    document.getElementById("login").style.display = "none";
-    document.getElementById("content").style.display = "block";
-    document.querySelector(".overlay").style.display = "none";
-    document.getElementById("bg-video").style.display = "none";
-    document.body.style.overflow = "auto";
+if (password === "SULEMAN'S") {
+  document.getElementById("login").style.display = "none";
+  document.getElementById("content").style.display = "block";
+  document.querySelector(".overlay").style.display = "none";
+  document.getElementById("bg-video").style.display = "none";
+  document.body.style.overflow = "auto";
 
-    // 🎉 Welcome Message
-    const welcome = document.createElement("div");
-    welcome.innerHTML = `
-      <div style="
-        position: fixed;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        background: white;
-        color: #e74c3c;
-        font-size: 24px;
-        padding: 30px;
-        border-radius: 20px;
-        box-shadow: 0 0 30px rgba(0,0,0,0.2);
-        z-index: 9999;
-        text-align: center;
-        max-width: 90%;
-      ">
-        🎉 Welcome to Suleman's Heart, <b>Sarah</b> 💖<br>
-        <small>This is your secret place of memories...</small>
-      </div>
-    `;
-    document.body.appendChild(welcome);
+  const welcome = document.createElement("div");
+  welcome.innerHTML = `...`;
 
-    setTimeout(() => {
-      welcome.remove();
-    }, 4000);
+  document.body.appendChild(welcome);
+  setTimeout(() => welcome.remove(), 4000);
 
-    // 🟢 Show the second code input after login
-    document.getElementById("secret-section").style.display = "block";
-  } else {
-    alert("Incorrect password!");
-  }
+  document.getElementById("secret-section").style.display = "block";
+
+  document.body.classList.add("logged-in");
 }
 
 // 👇 This function checks the second secret code
