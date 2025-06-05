@@ -156,36 +156,27 @@ body.logged-in {
   </ol>
 </section>
   </div>
-
-  <script>
-if (password === "SULEMAN'S LOVE SARAH") {
+  
+if (password === "suleman123") {
   document.getElementById("login").style.display = "none";
   document.getElementById("content").style.display = "block";
   document.querySelector(".overlay").style.display = "none";
   document.getElementById("bg-video").style.display = "none";
   document.body.style.overflow = "auto";
 
+  // 🎉 Show welcome popup
   const welcome = document.createElement("div");
   welcome.innerHTML = `...`;
 
   document.body.appendChild(welcome);
   setTimeout(() => welcome.remove(), 4000);
 
+  // 🟢 Show second code input
   document.getElementById("secret-section").style.display = "block";
 
+  // 🌹 Add rose garden background
   document.body.classList.add("logged-in");
 }
-
-// 👇 This function checks the second secret code
-function unlockSecret() {
-  const code = document.getElementById("secret-code").value;
-  if (code === "foreverlove") {
-    document.getElementById("secret-message").style.display = "block";
-  } else {
-    alert("Oops! Secret code is wrong.");
-  }
-}
-</script>
   
 <!-- Secret Code Unlock Box -->
 <div id="secret-section" style="display:none; text-align:center; margin-top: 30px;">
