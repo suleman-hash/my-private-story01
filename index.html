@@ -1,32 +1,94 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <title>Welcome to Suleman's World</title>
-  <link rel="stylesheet" href="style.css">
+  <title>Suleman's Private Website</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      text-align: center;
+      background: linear-gradient(to right, #f5f7fa, #c3cfe2);
+      padding: 20px;
+    }
+    input, button {
+      padding: 10px;
+      font-size: 16px;
+      border: none;
+      border-radius: 5px;
+      margin-top: 10px;
+    }
+    #content {
+      display: none;
+      margin-top: 30px;
+    }
+    section {
+      background: #ffffffdd;
+      margin: 20px auto;
+      padding: 20px;
+      border-radius: 15px;
+      max-width: 600px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    h2 {
+      color: #c0392b;
+    }
+  </style>
 </head>
 <body>
-  <div id="login-screen">
-    <h2>🔒 Enter Password to Continue</h2>
-    <input type="password" id="password" placeholder="Enter Password">
-    <button onclick="checkPassword()">Enter</button>
-    <p id="error-msg"></p>
+
+  <h2>🔒 Password Required</h2>
+  <input type="password" id="password" placeholder="Enter password" />
+  <br>
+  <button onclick="checkPassword()">Unlock My World</button>
+
+  <div id="content">
+    <section>
+      <h2>👶 My Birth Story</h2>
+      <p>I was born on 08 Sept 2009, in Aurangabad My family was very happy to welcome me...</p>
+    </section>
+
+    <section>
+      <h2>🏫 School Life</h2>
+      <p>I studied in Pearls Academy till 10.5 yearsand changed the school in the  middle. I made unforgettable memories, failling everytimes, getting bullied by others, and succeeded sometimes...</p>
+    </section>
+
+    <section>
+      <h2>👫 Friends</h2>
+      <ul>
+        <li>My biggest problem is that I hate making friends but having a girl who always supports and encourage the thing is that we are in Releationship</li>
+        <li>Sarah - the girl who hads changed my life fully and also her entreance of  was unexpected</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>😒 My Enemies</h2>
+      <p>Some people didn’t wish me well. I don't hate them — I just remember. but how they treated me was very difficult to handle</p>
+    </section>
+
+    <section>
+      <h2>🎯 My Dreams</h2>
+      <p>Dreams have lt of connections to me but after meeting sarah, the biggest dream is to Enjoy the life with her</p>
+    </section>
+
+    <section>
+      <h2>💖 Secret Section</h2>
+      <p>Only I know what's here. 😉</p>
+    </section>
   </div>
 
-  <div id="main-content" style="display: none;">
-    <h1>👋 Hello, I'm Suleman</h1>
-    <p>This is the story of my life from birth till now...</p>
+  <script>
+    function checkPassword() {
+      const password = document.getElementById("password").value;
+      if (password === "SULEMAN@SARAH") {
+        document.getElementById("content").style.display = "block";
+        document.querySelector("input").style.display = "none";
+        document.querySelector("button").style.display = "none";
+        document.querySelector("h2").textContent = "🔓 Welcome to My Life";
+      } else {
+        alert("Wrong password!");
+      }
+    }
+  </script>
 
-    <h2>🎓 School Life</h2>
-    <p>Add your school journey here...</p>
-
-    <h2>🧑‍🤝‍🧑 Friends</h2>
-    <p>List your school/college friends...</p>
-
-    <h2>😈 Enemies</h2>
-    <p>List them if you want, or just your fun experiences...</p>
-  </div>
-
-  <script src="script.js"></script>
 </body>
 </html>
+
