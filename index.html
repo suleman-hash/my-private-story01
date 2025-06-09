@@ -3,192 +3,173 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Welcome to My Private World</title>
+  <title>💖 Sarah | My Love</title>
+
   <style>
-    html, body {
-      margin: 0;
-      padding: 0;
-      height: 100%;
-      font-family: 'Segoe UI', sans-serif;
-      overflow: hidden;
+    * {
+      box-sizing: border-box;
     }
 
-    video#bg-video {
-      position: fixed;
-      top: 0;
-      left: 0;
-      min-width: 100%;
-      min-height: 100%;
-      object-fit: cover;
-      z-index: -2;
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: black;
+      color: white;
+      overflow: hidden;
+      transition: background 1s ease;
+    }
+
+    body.logged-in {
+      background: url('https://i.imgur.com/UyXPjKZ.jpg') no-repeat center center fixed;
+      background-size: cover;
+      overflow: auto;
     }
 
     .overlay {
-      background: rgba(0, 0, 0, 0.6);
       position: fixed;
       top: 0; left: 0;
-      width: 100%;
-      height: 100%;
-      z-index: -1;
+      width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.85);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
     }
 
-    #login {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      color: white;
+    input[type="password"], input[type="text"] {
+      padding: 12px;
+      font-size: 16px;
+      border-radius: 8px;
+      border: none;
+      outline: none;
+      margin: 10px 0;
+      width: 80%;
+      max-width: 300px;
       text-align: center;
     }
 
-    input, button {
-      padding: 12px;
-      margin: 10px;
-      font-size: 16px;
-      border: none;
-      border-radius: 8px;
-    }
-
     button {
-      background: #e74c3c;
+      padding: 10px 20px;
+      font-size: 16px;
+      border-radius: 8px;
+      border: none;
+      background: #e84393;
       color: white;
       cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    button:hover {
+      background: #d63031;
     }
 
     #content {
       display: none;
-      padding: 30px;
-      overflow-y: scroll;
-      height: 100vh;
-      background: white;
-      color: black;
+      padding: 40px 20px;
+      text-align: center;
     }
 
-    section {
-      max-width: 700px;
-      margin: 30px auto;
-      background: #fefefe;
-      border-radius: 12px;
+    #secret-section {
+      display: none;
+      text-align: center;
+      margin-top: 40px;
+    }
+
+    #secret-message {
+      display: none;
+      margin-top: 20px;
       padding: 20px;
-      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+      background: rgba(255, 255, 255, 0.9);
+      border-radius: 12px;
+      color: #c0392b;
+      font-size: 18px;
     }
 
-    h2 {
-      color: #e74c3c;
+    @media screen and (max-width: 600px) {
+      h1, h2, h3 {
+        font-size: 1.5rem;
+      }
     }
   </style>
-  
-  <style>
-body.logged-in {
-  background: url('https://i.imgur.com/UyXPjKZ.jpg') no-repeat center center fixed;
-  background-size: cover;
-  transition: background 1s ease-in-out;
-}
-</style>
 </head>
+
 <body>
-
-  <!-- Background video -->
-  <video autoplay muted loop id="bg-video">
-    <source src="https://cdn.pixabay.com/vimeo/359748126/night-stars-22698.mp4?width=1280&hash=b1e5f45a3a95ed6d2029e597003be1d007be06f0" type="video/mp4">
-    Your browser does not support HTML5 video.
-  </video>
-
-  <div class="overlay"></div>
-
-  <!-- Login Section -->
-  <div id="login">
-    <h1>🔒 Enter the Secret</h1>
-    <input type="password" id="password" placeholder="Enter Password" />
-    <br />
-    <button onclick="checkPassword()">Unlock</button>
+  <!-- Password Screen -->
+  <div class="overlay" id="login">
+    <h2>🔐 Enter Password</h2>
+    <input type="password" id="password" placeholder="Enter password...">
+    <br>
+    <button onclick="checkPassword()">Unlock 💖</button>
   </div>
+
+  <!-- Main Content -->
   <div id="content">
-    <section>
-      <h2>👶 My Birth Story</h2>
-      <p>I was born on 08 Sept 2009, in Aurangabad My family was very happy to welcome me...</p>
-    </section>
+    <h1>🌹 Welcome, Sarah</h1>
+    <p>This page holds my story, my memories, and everything I feel for you.</p>
 
-    <section>
-      <h2>🏫 School Life</h2>
-      <p>I studied in Pearls Academy till 10.5 yearsand changed the school in the  middle. I made unforgettable memories, failling everytimes, getting bullied by others, and succeeded sometimes...</p>
-    </section>
+    <!-- Secret Code Section -->
+    <div id="secret-section">
+      <h3>💌 Enter Secret Code</h3>
+      <input id="secret-code" type="text" placeholder="Your secret code...">
+      <br>
+      <button onclick="unlockSecret()">Reveal Secret 💌</button>
 
-    <section>
-      <h2>👫 Friends</h2>
-      <ul>
-        <li>My biggest problem is that I hate making friends but having a girl who always supports and encourage the thing is that we are in Releationship</li>
-        <li>Sarah - the girl who hads changed my life fully and also her entreance of  was unexpected</li>
-      </ul>
-    </section>
-
-    <section>
-      <h2>😒 My Enemies</h2>
-      <p>Some people didn’t wish me well. I don't hate them — I just remember. but how they treated me was very difficult to handle</p>
-    </section>
-
-    <section>
-      <h2>🎯 My Dreams</h2>
-      <p>Dreams have lt of connections to me but after meeting sarah, the biggest dream is to Enjoy the life with her</p>
-    </section>
-
-    <section>
-      <h2>💖 Secret Section</h2>
-      <p>Only I know what's here. 😉</p>
-    </section>
-    
-    <section>
-  <h2>💘 100 Reasons I Love Her</h2>
-  <ol style="text-align: left; max-width: 600px; margin: auto;">
-    <li>Her smile lights up my entire day.</li>
-    <li>She believes in me when I don't believe in myself.</li>
-    <li>The way she says my name melts my heart.</li>
-    <li>She makes the ordinary feel magical.</li>
-    <li>Her eyes speak more than words ever could.</li>
-    <li>She listens. Truly listens.</li>
-    <li>She makes me want to be the best version of myself.</li>
-    <li>The little silly things she does unknowingly.</li>
-    <li>Her kindness to strangers.</li>
-    <li>The way she holds my hand.</li>
-    <!-- You can keep adding more like this -->
-    <li>...</li>
-    <li>I love her because... I just do. No reason needed.</li>
-  </ol>
-</section>
+      <div id="secret-message">
+        💖 <strong>My Deepest Secret</strong><br>
+        Sarah, from the moment I met you, my world changed.  
+        This secret place is yours — my love, my truth, my heart.
+      </div>
+    </div>
   </div>
-  
-if (password === "SARAH.M") {
-  document.getElementById("login").style.display = "none";
-  document.getElementById("content").style.display = "block";
-  document.querySelector(".overlay").style.display = "none";
-  document.getElementById("bg-video").style.display = "none";
-  document.body.style.overflow = "auto";
 
-  // 🎉 Show welcome popup
-  const welcome = document.createElement("div");
-  welcome.innerHTML = `...`;
+  <script>
+    function checkPassword() {
+      const password = documet.getElementById("password").value;
+      if (password === "BUNNY'S BOY") {
+        document.getElementById("login").style.display = "none";
+        document.getElementById("content").style.display = "block";
+        document.body.classList.add("logged-in");
 
-  document.body.appendChild(welcome);
-  setTimeout(() => welcome.remove(), 4000);
+        // Welcome popup
+        const welcome = document.createElement("div");
+        welcome.innerHTML = `
+          <div style="
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: white;
+            color: #e74c3c;
+            font-size: 24px;
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 0 30px rgba(0,0,0,0.2);
+            z-index: 9999;
+            text-align: center;
+            max-width: 90%;
+          ">
+            🎉 Welcome to Suleman's Heart, <b>Sarah</b> 💖<br>
+            <small>This is your secret place of memories...</small>
+          </div>
+        `;
+        document.body.appendChild(welcome);
+        setTimeout(() => welcome.remove(), 4000);
 
-  // 🟢 Show second code input
-  document.getElementById("secret-section").style.display = "block";
+        document.getElementById("secret-section").style.display = "block";
+      } else {
+        alert("Incorrect password!");
+      }
+    }
 
-  // 🌹 Add rose garden background
-  document.body.classList.add("logged-in");
-}
-  
-<!-- Secret Code Unlock Box -->
-<div id="secret-section" style="display:none; text-align:center; margin-top: 30px;">
-  <input id="secret-code" type="text" placeholder="Enter the Secret Code..." style="padding: 10px; font-size: 16px; border-radius: 8px;"/>
-  <button onclick="unlockSecret()" style="padding: 10px 20px; font-size: 16px; border-radius: 8px; background: #e67e22; color: white;">Unlock 💌</button>
-
-  <div id="secret-message" style="display:none; margin-top: 20px; padding: 20px; background: #fff4f4; border-radius: 12px; color: #e74c3c; font-size: 18px;">
-    💌 <strong>My Deepest Secret</strong><br>
-    Sarah, I knew I loved you from the first moment I saw your smile. This heart was always yours... forever. 💖
-  </div>
-</div>
-  
+    function unlockSecret() {
+      const code = document.getElementById("secret-code").value;
+      if (code === "foreverlove") {
+        document.getElementById("secret-message").style.display = "block";
+      } else {
+        alert("Oops! Secret code is wrong.");
+      }
+    }
+  </script>
 </body>
 </html>
-
