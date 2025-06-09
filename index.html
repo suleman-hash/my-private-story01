@@ -123,53 +123,38 @@
     </div>
   </div>
 
-  <script>
-    function checkPassword() {
-      const password = documet.getElementById("password").value;
-      if (password === "BUNNY'S BOY") {
-        document.getElementById("login").style.display = "none";
-        document.getElementById("content").style.display = "block";
-        document.body.classList.add("logged-in");
+<script>
+  function checkPassword() {
+    const password = document.getElementById("password").value;
+    if (password === "suleman123") {
+      document.getElementById("login").style.display = "none";
+      document.getElementById("content").style.display = "block";
+      document.body.classList.add("logged-in");
 
-        // Welcome popup
-        const welcome = document.createElement("div");
-        welcome.innerHTML = `
-          <div style="
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            background: white;
-            color: #e74c3c;
-            font-size: 24px;
-            padding: 30px;
-            border-radius: 20px;
-            box-shadow: 0 0 30px rgba(0,0,0,0.2);
-            z-index: 9999;
-            text-align: center;
-            max-width: 90%;
-          ">
-            🎉 Welcome to Suleman's Heart, <b>Sarah</b> 💖<br>
-            <small>This is your secret place of memories...</small>
-          </div>
-        `;
-        document.body.appendChild(welcome);
-        setTimeout(() => welcome.remove(), 4000);
+      const welcome = document.createElement("div");
+      welcome.innerHTML = `
+        <div style="position: fixed; top: 50%; left: 50%;
+        transform: translate(-50%, -50%); background: white; color: #e74c3c;
+        font-size: 24px; padding: 30px; border-radius: 20px; box-shadow: 0 0 30px rgba(0,0,0,0.2);
+        z-index: 9999; text-align: center; max-width: 90%;">
+          🎉 Welcome to Suleman's Heart, <b>Sarah</b> 💖<br>
+          <small>This is your secret place of memories...</small>
+        </div>`;
+      document.body.appendChild(welcome);
+      setTimeout(() => welcome.remove(), 4000);
 
-        document.getElementById("secret-section").style.display = "block";
-      } else {
-        alert("Incorrect password!");
-      }
+      document.getElementById("secret-section").style.display = "block";
+    } else {
+      alert("Incorrect password!");
     }
+  }
 
-    function unlockSecret() {
-      const code = document.getElementById("secret-code").value;
-      if (code === "foreverlove") {
-        document.getElementById("secret-message").style.display = "block";
-      } else {
-        alert("Oops! Secret code is wrong.");
-      }
+  function unlockSecret() {
+    const code = document.getElementById("secret-code").value;
+    if (code === "foreverlove") {
+      document.getElementById("secret-message").style.display = "block";
+    } else {
+      alert("Oops! Secret code is wrong.");
     }
-  </script>
-</body>
-</html>
+  }
+</script>
